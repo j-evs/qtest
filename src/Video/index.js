@@ -9,9 +9,9 @@ export default class Video extends Component {
                 width={width}
                 height={height}
                 src={src}
-                frameborder="0"
+                frameBorder="0"
                 allow="autoplay; encrypted-media"
-                allowfullscreen
+                allowFullScreen
             />
         );
     }

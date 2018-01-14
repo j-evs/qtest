@@ -1,23 +1,19 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
 import Video from "../Video";
 
-export default class Battle extends Component {
+const mapStateToProps = ({ battle: { videos, videoIds } }) => ({ videos, videoIds });
+
+class Battle extends Component {
+
     render() {
-        return (
-            <div>
-                <Video
-                    title="vid1"
-                    width="560"
-                    height="315"
-                    src="https://www.youtube-nocookie.com/embed/1Wh8RzcQZr4?rel=0"
-                />
-                <Video
-                    title="vid2"
-                    width="560"
-                    height="315"
-                    src="https://www.youtube-nocookie.com/embed/1kgmfPClsZc?rel=0"
-                />
-            </div>
-        );
+        const { videos, videoIds } = this.props;
+        const videosComponents = videoIds
+            .map(videoId => videos[videoId])
+            .map( ({id, ...props} ) => <Video key={ id } {...props} /> );
+
+        return videosComponents;
     }
 }
+
+export default connect(mapStateToProps)(Battle);
