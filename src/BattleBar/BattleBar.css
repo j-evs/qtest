@@ -1,0 +1,13 @@
+.battle-bar {
+    height: 50px;
+}
+
+.battle-bar__first-video {
+    height: 50px;
+    background-color: goldenrod;
+}
+
+.battle-second-video {
+    height: 50px;
+    background-color: seagreen;
+}
