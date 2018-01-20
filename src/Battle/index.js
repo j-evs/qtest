@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import styled from 'styled-components';
 import { connect } from "react-redux";
+
 import Video from "../Video";
 import BattleBar from "../BattleBar";
 
@@ -7,6 +9,12 @@ const mapStateToProps = ({ battle: { videos, videoIds } }) => ({
     videos,
     videoIds
 });
+
+const VideoWrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap
+`;
 
 class Battle extends Component {
     render() {
@@ -19,7 +27,7 @@ class Battle extends Component {
         const secondVideo = videos[videoIds[1]];
         return (
             <div>
-                {videosComponents}
+                <VideoWrapper>{videosComponents}</VideoWrapper>
                 <BattleBar
                     firstVideoLikes={firstVideo.likes}
                     secondVideoLikes={secondVideo.likes}
