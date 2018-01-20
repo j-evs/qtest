@@ -3,14 +3,14 @@ import "./BattleBar.css";
 
 import styled from 'styled-components';
 
-const FirstVideo = styled.div`
+const FirstVideoBar = styled.div`
     display: inline-block;
     height: 50px;
     width: ${props => `${props.width * 100}%`};
     background-color: goldenrod;
 `;
 
-const SecondVideo = styled.div`
+const SecondVideoBar = styled.div`
     display: inline-block;
     height: 50px;
     width: ${props => `${props.width * 100}%`};
@@ -25,8 +25,8 @@ export default class BattleBar extends Component {
         const secondVideoPercentage = secondVideoLikes / likeSum;
         return (
             <div className="battle-bar">
-                <FirstVideo width={firstVideoPercentage} />
-                <SecondVideo width={secondVideoPercentage} />
+                <FirstVideoBar width={firstVideoPercentage} />
+                <SecondVideoBar width={secondVideoPercentage} />
             </div>
         );
     }
