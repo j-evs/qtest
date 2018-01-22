@@ -28,7 +28,7 @@ const LikeCounter = styled.span``;
 
 export default class Video extends Component {
     render() {
-        const { width, height, src, title, likes } = this.props;
+        const { width, height, src, title, likes, handleLikeClick } = this.props;
         return (
             <VideoWrapper>
                 <iframe
@@ -42,7 +42,7 @@ export default class Video extends Component {
                 />
                 <VideoInfoWrapper>
                     <LikeInfoWrapper>
-                        <LikeButton>
+                        <LikeButton onClick={handleLikeClick}>
                             <StyledHeart />
                         </LikeButton>
                         <LikeCounter>{likes}</LikeCounter>
